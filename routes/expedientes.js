@@ -29,7 +29,8 @@ router.get('/todos', async ( req,res)=>{
 router.post('/', async(req, res) =>{
     const expediente = new Expediente({
         curso: req.body.curso,
-        alumno: req.body.alumno
+        alumno: req.body.alumno,
+        asignaturas: req.body.asignaturas
     })
     try{
         const expedienteUno = await expediente.save();

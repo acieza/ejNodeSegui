@@ -11,10 +11,20 @@ const expedienteSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    alumno: { 
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Alumno"
-    }
+    asignaturas: [{
+        
+        nombreAsignatura: {
+            type: String,
+            
+        },       
+        notaPractica:{
+            type: Number
+        },
+        notaTeorica:{
+            type: Number
+        },
+        
+    }]
 
 })
 

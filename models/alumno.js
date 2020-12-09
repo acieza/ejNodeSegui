@@ -5,19 +5,24 @@ const alumnoSchema = new mongoose.Schema({
 
     nombre:{
         type:String,
-        required:true
+        
     },
     apellido:{
         type:String,
-        required:true
+        
     },
     sexo:{
         type: String,
         enum: ['Masculino','Femenino','otro'],
         default:'Masculino',
-        required: true
+        
+    },
+    expediente: { 
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Expediente"
     }
 
 })
 
 module.exports = mongoose.model('Alumno', alumnoSchema);
+
