@@ -47,7 +47,7 @@ router.get('/Masculino', async ( req,res)=>{
 
 router.get('/buscaA/:ape', async ( req,res)=>{
     try{
-        const alumnUno = await Alumno.find({apellido: {req.params.ape}});
+        const alumnUno = await Alumno.find({apellido: req.params.ape});
         res.json(alumnUno);
     }catch{
         res.send("Error " + err);
